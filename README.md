@@ -1,1 +1,1 @@
-This repo is made for the complition of the assignment of DSA (COMP(202)).
+This repo is made for the completion of the assignment of DSA (COMP(202)).

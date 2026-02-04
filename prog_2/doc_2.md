@@ -1,4 +1,4 @@
-# Documentation
+# Documentation on prog_2
 ## Introduction
 A stack is used to temporarily store operators and parentheses while converting an infix expression into postfix form.
 

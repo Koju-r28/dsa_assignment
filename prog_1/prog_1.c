@@ -1,9 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 #define MAX 100
 
 char stack[MAX];
-int top = -1;
+int top;
+
+void initStack() {
+    top = -1;
+}
 
 void push(char c) {
     stack[++top] = c;
@@ -21,6 +24,7 @@ int isMatching(char open, char close) {
 }
 
 int isBalanced(char exp[]) {
+    initStack();
     for (int i = 0; exp[i] != '\0'; i++) {
         if (exp[i] == '(' || exp[i] == '[' || exp[i] == '{')
             push(exp[i]);
@@ -33,13 +37,13 @@ int isBalanced(char exp[]) {
 }
 
 int main() {
-    char exp[100];
-    printf("Enter expression: ");
-    gets(exp);
+    char exp1[] = "a + (b - c) * (d";
+    char exp2[] = "m + [a - b * (c + d * {m)]";
+    char exp3[] = "a + (b - c)";
 
-    if (isBalanced(exp))
-        printf("Balanced Expression\n");
-    else
-        printf("Unbalanced Expression\n");
+    printf("%s -> %s\n", exp1, isBalanced(exp1) ? "Balanced" : "Not Balanced");
+    printf("%s -> %s\n", exp2, isBalanced(exp2) ? "Balanced" : "Not Balanced");
+    printf("%s -> %s\n", exp3, isBalanced(exp3) ? "Balanced" : "Not Balanced");
+
     return 0;
 }

@@ -1,19 +1,28 @@
-(a)Introduction
+# Documentation
+## Introduction
 A stack is used to temporarily store operators and parentheses while converting an infix expression into postfix form.
 
-(b)Function Specifications
+## Functions Discription
 
-1.push(char x): This function adds an operator to the stack.
+push() – It pushes operator into stack.
 
-2.pop(): Pop() function removes the topmost operator from the stack.
+pop() – It removes operator from stack.
 
-3'priority(char x): It provides the level of precedence of the operators.
+priority() – It returns operator precedence.
 
-(c)Overview on main() function
+## Algorithm
 
-The main() function takes an infix expression, performs stack operations to convert it to postfix notation, and outputs the postfix expression.
+    1. Scan infix expression from left to right
 
-(d)Example of output
-Input: a+b*c
-Output: abc*+
+    2. If operand, print directly
 
+    3. If operator, pop higher precedence operators and push current operator
+
+    4. Pop all remaining operators at the end
+
+## main() Overview
+It reads infix expression, converts it to postfix using stack, and prints output.
+
+## Output 
+    Input: a+bc
+    Output: abc+

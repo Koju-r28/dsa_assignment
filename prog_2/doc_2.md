@@ -1,6 +1,10 @@
-# Documentation on prog_2
+# Documentation on prog_2 (Infix to Postfix Conversion & Evaluation)
 ## Introduction
-A stack is used to temporarily store operators and parentheses while converting an infix expression into postfix form.
+A stack is used to temporarily store operators and parentheses while converting an infix expression into postfix form.Conversion is required because postfix expressions can be evaluated easily using stacks without operator precedence rules.
+
+## Data Structure Used
+Stack (Array Implementation) :A Stack is a linear data structure that follows a particular order in which the operations are performed.The order may be LIFO(Last In First Out) or FILO(First In Last Out). LIFO implies that the element that is inserted last, comes out first and FILO implies that the element that is inserted first, comes out last.
+
 
 ## Functions Discription
 

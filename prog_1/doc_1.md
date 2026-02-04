@@ -1,28 +1,46 @@
-(a)Introduction
+# Documentation of prog_1
+## Introduction
+A stack is a data structure that follows the Last In First Out principle. In this program, we have used a character array to represent the stack, where the size of the array is defined by the constant MAX, which represents the maximum size of the stack. An integer variable, top, is used to store the top element of the stack. It is initialized to -1, indicating that the stack is initially empty.
+The opening parentheses, ((, {, and [, which we encounter during the scanning of the expression, are temporarily stored in the stack. When we encounter a closing parenthesis, we pop the opening parenthesis from the stack and check for its correctness.
 
-A stack is made using a character array of a fixed size. The variable top is responsible for the index of the topmost element of the stack. The stack serves to hold opening parentheses temporarily during the expression scanning.
+## Function Descriptions
+### void push(char c)
+It adds adds an opening parenthesis to the stack by incrementing top and setting stack[top] = char. This function is called when (, {, or [ is seen.
+### char pop()
+char pop() pops an element from the stack by returning stack[top] and then decrementing top. This function is called when a closing parenthesis is seen.
+### int isMatching(char open, char close)
+This function checks if the popped opening parenthesis and the current closing parenthesis are a pair. It returns 1 if they are a pair ((), {}, []), otherwise 0.
+### int isBalanced(char exp[])
+This function iterates through the expression one by one. It uses the stack for the iteration. When an opening parenthesis is seen, it is pushed onto the stack. When a closing parenthesis is seen, it checks for matching by calling isMatching().
 
-(b)Functions Specification
+## Algorithm 
 
-1.push(char c): It adds an opening parenthesis to the stack.
+1.Initialize an empty stack.
 
-2.pop(): pop() deletes and gives back the topmost element of the stack.
+2.Traverse the expression from left to right.
 
-3.isMatching(char open, char close): this function verifies if the open and closed parentheses match.
+3.If an opening parenthesis is found, push it onto the stack.
 
-4.isBalanced(char exp[]): Scans through the expression and checks if all the parentheses are balanced.
+4.If a closing parenthesis is found:
 
-(c) Overview on main() function
+    .If the stack is empty, the expression is unbalanced.
 
-The main() function receives a mathematical expression from the user and invokes isBalanced() to determine if the parentheses are balanced. It then prints a message based on the result.
+    .Otherwise, pop the top element and check for matching.
 
-(d) Output
+5.After complete traversal, check the stack:
 
-1.Input:a + (b − c) ∗ (d
-Output: Unbalanced Expression
+     .If empty → balanced expression.
 
-2.Input:m + [a − b ∗ (c + d ∗ {m)]
-Output: Unbalanced Expression
+     .If not empty → unbalanced expression
 
-2.Input: a + (b - c)
-Output: Balanced Expression
+
+
+## main() Function Overview
+The main() function prompts the user to enter a mathematical expression, then calls isBalanced() to validate the parentheses. Based on the return value, it displays whether the expression is balanced or unbalanced.
+
+### Output
+```bash
+a + (b - c) * (d -> Not Balanced
+m + [a - b * (c + d * {m)] -> Not Balanced
+a + (b - c) -> Balanced
+```

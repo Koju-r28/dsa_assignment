@@ -2,6 +2,7 @@
 ## Introduction
 A heap is a special complete binary tree that satisfies the heap property. In a max heap, the value of each parent node is greater than or equal to the values of its child nodes. Heaps are commonly implemented using arrays because a complete binary tree can be efficiently represented in contiguous memory.
 For an array-based heap:
+
 .Parent index = (i - 1) / 2
 
 .Left child index = 2\*i + 1

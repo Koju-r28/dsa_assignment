@@ -10,7 +10,9 @@ For an array-based heap:
 .Right child index = 2\*i + 2
 
 ## Functions Specification
-heapify(int arr[], int n, int i) :This function ensures that the subtree rooted at index i satisfies the max-heap property. It compares the parent node with its left and right children and swaps with the largest element if necessary. The function is called recursively until the heap property is restored.
+maxheapify(int arr[], int n, int i) :This function ensures that the subtree rooted at index i satisfies the max-heap and min-heap property. It compares the parent node with its left and right children and swaps with the largest element if necessary. The function is called recursively until the heap property is restored.
+
+\
 ## c) Algorithm Explanation
 
     1.Treat the array as a complete binary tree.
@@ -23,7 +25,13 @@ heapify(int arr[], int n, int i) :This function ensures that the subtree rooted 
 
     5.Continue until the entire array forms a max heap.
 ## Overview on main() function
-The main() function initializes an integer array and converts it into a max heap by calling the heapify() function on all non-leaf nodes. After heap construction, the heap elements are printed.
+The main() function initializes an integer array and converts it into a max heap by calling the maxheapify() function on all non-leaf nodes. An integer array and converts it into a min heap by calling the maxheapify() function on all non-leaf nodes.After heap construction, the heap elements are printed.
 
 ## Output
-      Max Heap: 10 5 3 4 1
+---bash
+Original Array:
+4 10 3 5 1 
+Max Heap:
+10 5 3 4 1
+Min Heap:
+1 4 3 5 10

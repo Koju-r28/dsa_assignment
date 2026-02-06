@@ -1,7 +1,10 @@
-# Documentation of prog_1
+# Documentation of prog_1(Balanced Parentheses Checker )
 ## Introduction
 A stack is a data structure that follows the Last In First Out principle. In this program, we have used a character array to represent the stack, where the size of the array is defined by the constant MAX, which represents the maximum size of the stack. An integer variable, top, is used to store the top element of the stack. It is initialized to -1, indicating that the stack is initially empty.
 The opening parentheses, ((, {, and [, which we encounter during the scanning of the expression, are temporarily stored in the stack. When we encounter a closing parenthesis, we pop the opening parenthesis from the stack and check for its correctness.
+
+## Datastructure Used
+stack
 
 ## Function Descriptions
 ### void push(char c)
